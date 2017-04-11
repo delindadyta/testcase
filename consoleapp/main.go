@@ -1,10 +1,10 @@
 package main
 
 import (
-	. "eaciit/bankingsalesperformance/consoleapps/controllers"
 	_ "github.com/eaciit/dbox/dbc/mongo"
 	"github.com/eaciit/orm"
 	tk "github.com/eaciit/toolkit"
+	. "github.com/testcase/consoleapp/controllers"
 	"os"
 	"runtime"
 )
@@ -27,9 +27,7 @@ func main() {
 		base := new(BaseController)
 		base.Ctx = orm.New(conn)
 		defer base.Ctx.Close()
-		// new(AccountPlanSummary).Generate(base)
-		new(ProspectSummary).Generate(base)
-		// new(LoginUserSummary).Generate(base)
+		new(Cost).Generate(base)
 
 	}
 
