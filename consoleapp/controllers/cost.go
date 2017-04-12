@@ -17,7 +17,7 @@ func (d *Cost) Generate(base *BaseController) {
 		d.BaseController = base
 	}
 
-	excelFileName := "D:/Gopath/src/github.com/testcase/sources/TestCase.xlsx"
+	excelFileName := "E:/Gopath/src/github.com/testcase/sources/TestCase.xlsx"
 	xlFile, err := xlsx.OpenFile(excelFileName)
 	if err != nil {
 		tk.Println(err)
