@@ -27,7 +27,9 @@ func main() {
 		base := new(BaseController)
 		base.Ctx = orm.New(conn)
 		defer base.Ctx.Close()
-		new(Cost).Generate(base)
+
+		//new(Cost).Generate(base)
+		new(Me).Generate(base)
 
 	}
 
