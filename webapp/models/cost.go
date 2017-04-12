@@ -25,3 +25,26 @@ func (e *CostModel) RecordID() interface{} {
 func (m *CostModel) TableName() string {
 	return "Cost"
 }
+
+type MonthlyModel struct {
+	orm.ModelBase `bson:"-",json:"-"`
+	Id            bson.ObjectId ` bson:"_id" , json:"_id" `
+	Description   string
+	Category      string
+	ProjectCost   string
+	ActualCost    string
+}
+
+func NewMonthlyModel() *MonthlyModel {
+	m := new(MonthlyModel)
+	m.Id = bson.NewObjectId()
+	return m
+}
+
+func (e *MonthlyModel) RecordID() interface{} {
+	return e.Id
+}
+
+func (m *MonthlyModel) TableName() string {
+	return "MonthlyEpenses"
+}
